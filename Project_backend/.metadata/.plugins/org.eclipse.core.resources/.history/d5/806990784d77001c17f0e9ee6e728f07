@@ -1,0 +1,5 @@
+package com.springbackend.springboot.service;
+
+public class DoctorPatientService {
+
+}

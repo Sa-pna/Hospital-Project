@@ -1,0 +1,28 @@
+package com.springbackend.springboot;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.springbackend.springboot.model.Doctor;
+import com.springbackend.springboot.repository.DoctorRepository;
+import com.springbackend.springboot.repository.PatientRepository;
+
+@SpringBootApplication
+public class SpringbootBackendApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootBackendApplication.class, args);
+	
+	}
+	
+	@Bean
+	public CommandLineRunner mappingDemo(DoctorRepository doctorRepository, PatientRepository patientRepository) {
+		return args ->{
+			Doctor doctor = new Doctor();
+			doctorRepository.save(doctor);
+		};
+	}
+
+}
